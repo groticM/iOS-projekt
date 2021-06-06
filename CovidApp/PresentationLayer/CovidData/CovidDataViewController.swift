@@ -37,7 +37,7 @@ class CovidDataViewController: UIViewController {
     }
     
     func buildViews() {
-        view.backgroundColor = UIColor(red: 0.49, green: 0.78, blue: 0.94, alpha: 1.00)
+        view.backgroundColor = Colors().backgroundColor
         
         titleLabel = UILabel()
         titleLabel.font = UIFont.boldSystemFont(ofSize: 25.0)

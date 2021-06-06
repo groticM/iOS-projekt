@@ -12,7 +12,15 @@ class AppCoordinator : AppCoordinatorProtocol {
     
     private func setRootViewController() {
         let covidDataController = createCovidDataViewController()
-        navigationController.viewControllers = [covidDataController]
+        covidDataController.tabBarItem = UITabBarItem(title: "World COVID Statistics", image:  UIImage(systemName: "waveform.path.ecg.rectangle"), selectedImage: UIImage(systemName:"waveform.path.ecg.rectangle.fill"))
+        
+        let vaccineDataViewController = VaccineDataViewController()
+        vaccineDataViewController.tabBarItem = UITabBarItem(title: "Vaccine", image:  UIImage(systemName: "heart.text.square"), selectedImage: UIImage(systemName:"heart.text.square.fill"))
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [covidDataController, vaccineDataViewController]
+        
+        navigationController.viewControllers = [tabBarController]
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
